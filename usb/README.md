@@ -15,7 +15,7 @@ So now that you know why you should USB map, we can now talk about technical inf
 
 So with USB, we need to understand not all ports are the same and that some ports are actually hiding other ports within them! What I mean by this is the following:
 
-* A USB 3.0 port is actually seen as 2 ports to macOS: a USB 2.0 **and** USB 3.0
+* A USB 3.0 port (of any generation/speed) is actually seen as 2 ports to macOS: a USB 2.0 **and** USB 3.0
 * This is also how USB can keep its backwards compatibility, as all USB 3.0 devices **must** support USB 2.0
 
 Now let's look at a diagram of a USB port to better understand this:
@@ -23,6 +23,12 @@ Now let's look at a diagram of a USB port to better understand this:
 ![Image from usb3.com](../images/post-install/usb-md/usb-3.png)
 
 As you can see, the bottom 4 pins are dedicated to USB 2.0 and when the extra 5 pins above are recognized the device will switch to a USB 3.0 mode.
+
+This gets more complicated with USB-C. Since USB-C is orientation-agnostic, you can plug the cable in up or down and it will still work.
+
+![Image from wikipedia.org](../images/post-install/usb-md/usb-c.png)
+
+Some systems differ in the implementation of this bi-directional plugging. The optimal method is for the motherboard to implement a switch chip close to the physical port, which interprets the flipped signals and feeds them to a single lane on the USB controller. However, others do not implement this switch instead choosing to allocate a second lane (port) on the controller for the flipped orientation. This means that for a physical USB-C port which supports USB 3.0 and USB 2.0, you may have to allocate four ports for it to work in both orientations (two for USB 3.0 speeds, and two for 2.0 speeds)!
 
 Now with the basic understanding out of the way, we now have to talk about the dreadful 15 port limit.
 

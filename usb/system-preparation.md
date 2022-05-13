@@ -2,7 +2,7 @@
 
 Table of Contents:
 
-* [System Preparation](#system-preparation)
+* [System Preparation](#pre-11.3-system-preparation)
 * [Checking what renames you need](#checking-what-renames-you-need)
 * [Parting ways](#parting-ways)
 
